@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,6 +9,9 @@ export default function Home() {
         Explore delicious recipes from around the world and find inspiration for
         your next meal.
       </p>
+      <Link href="/recipes" className={styles.heroButton}>
+        Browse Recipes
+      </Link>
     </section>
   );
 }
