@@ -1,0 +1,27 @@
+.recipesPage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.pageDescription {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.recipeCount {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.recipeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2rem;
+}
