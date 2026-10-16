@@ -1,0 +1,49 @@
+.recipeDetails {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.recipeTitle {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.recipeImage {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.ingredientsList {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+}
+
+.ingredientItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.ingredientItem:last-child {
+  border-bottom: none;
+  text-align: right;
+}
+
+.instructions {
+  max-width: 600px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
