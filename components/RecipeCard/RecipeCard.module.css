@@ -1,6 +1,24 @@
+/* bestemmer hvordan én oppskrift skal vises*/
+
 .recipeCard {
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px #0000001a;
+}
+
+.recipeImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
   padding: 1rem;
+  box-sizing: border-box;
+  height: 100%;
 }
