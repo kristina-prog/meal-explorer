@@ -15,7 +15,7 @@ export default function RecipeCard({ meal }: RecipeCardProps) {
       <Link href={`/recipes/${meal.idMeal}`} className={styles.cardLink}>
         <Image
           src={meal.strMealThumb}
-          alt={meal.strMeal}
+          alt=""
           width={300}
           height={200}
           className={styles.recipeImage}

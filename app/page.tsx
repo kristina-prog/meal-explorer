@@ -9,7 +9,7 @@ export default function Home() {
         Explore delicious recipes from around the world and find inspiration for
         your next meal.
       </p>
-      <Link href="/recipes" className={styles.heroButton}>
+      <Link href="/recipes" className={`button ${styles.heroButton}`}>
         Browse Recipes
       </Link>
     </section>
