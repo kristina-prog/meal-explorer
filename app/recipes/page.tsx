@@ -27,17 +27,19 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
 
       <form action="/recipes" method="GET" className={styles.searchForm}>
         <label htmlFor="recipe-search">Search Recipes</label>
-        <input
-          type="text"
-          id="recipe-search"
-          name="q"
-          placeholder="e.g. pasta, chicken, soup"
-          defaultValue={q || ""}
-          className={styles.searchInput}
-        />
-        <button type="submit" className={`button ${styles.searchButton}`}>
-          Search
-        </button>
+        <div className={styles.searchControls}>
+          <input
+            type="text"
+            id="recipe-search"
+            name="q"
+            placeholder="e.g. pasta, chicken, soup"
+            defaultValue={q || ""}
+            className={styles.searchInput}
+          />
+          <button type="submit" className={`button ${styles.searchButton}`}>
+            Search
+          </button>
+        </div>
       </form>
       {meals.length === 0 ? (
         <p className={styles.noResults}>No recipes found for {q}.</p>
