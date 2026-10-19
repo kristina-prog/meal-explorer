@@ -1,0 +1,33 @@
+.aboutPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.aboutPage h1 {
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+
+.aboutPage h2 {
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.aboutPage p {
+  line-height: 1.7;
+}
+
+.infoCard {
+  background-color: #f8f2f6;
+  border-left: 4px solid var(--primary);
+  border-radius: 0.375rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .infoCard h2 {
+    font-size: 1.25rem;
+  }
+}
