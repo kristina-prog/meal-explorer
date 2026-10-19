@@ -4,6 +4,7 @@
 import RecipeCard from "@/components/RecipeCard/RecipeCard";
 import styles from "./page.module.css";
 import { getMeals } from "@/lib/meals";
+import Form from "next/form";
 
 type RecipesPageProps = {
   searchParams: Promise<{ q?: string }>;
@@ -25,11 +26,11 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
         Discover delicious meals from around the world.
       </p>
 
-      <form action="/recipes" method="GET" className={styles.searchForm}>
+      <Form action="/recipes" className={styles.searchForm}>
         <label htmlFor="recipe-search">Search Recipes</label>
         <div className={styles.searchControls}>
           <input
-            type="text"
+            type="search"
             id="recipe-search"
             name="q"
             placeholder="e.g. pasta, chicken, soup"
@@ -40,7 +41,7 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
             Search
           </button>
         </div>
-      </form>
+      </Form>
       {meals.length === 0 ? (
         <p className={styles.noResults}>No recipes found for {q}.</p>
       ) : null}

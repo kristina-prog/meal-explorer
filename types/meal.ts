@@ -1,6 +1,5 @@
 //Meal beskriver hvordan dataene kommer fra API-et
 export type Meal = {
-  //
   idMeal: string;
   strMeal: string;
   strMealThumb: string;
