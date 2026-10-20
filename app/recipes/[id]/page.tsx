@@ -50,7 +50,7 @@ export default async function RecipeDetailsPage({
         className={styles.recipeImage}
       />
       <p>Category: {meal.strCategory}</p>
-      <p>Origin: {meal.strArea}</p>
+      {meal.strArea && <p>Origin: {meal.strArea}</p>}
       <h2 className={styles.sectionTitle}>Ingredients</h2>
       <ul className={styles.ingredientsList}>
         {ingredients.map((ingredient, index) => (
