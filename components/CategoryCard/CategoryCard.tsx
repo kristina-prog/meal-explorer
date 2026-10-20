@@ -9,7 +9,7 @@ type CategoryCardProps = {
 
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
-    <article className={styles.recipeCard}>
+    <article className={`${styles.recipeCard} ${styles.categoryCard}`}>
       <Link
         href={`/recipes?category=${encodeURIComponent(category.strCategory)}`}
         className={styles.cardLink}
@@ -19,7 +19,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
           alt=""
           width={300}
           height={200}
-          className={styles.recipeImage}
+          className={styles.categoryImage}
         />
         <h2>{category.strCategory}</h2>
       </Link>

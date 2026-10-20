@@ -23,17 +23,6 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
   const { q, category } = await searchParams;
   const categories = !q && !category ? await getCategories() : [];
 
-  const categoriesWithImages = await Promise.all(
-    categories.map(async (category) => {
-      const meals = await getMealsByCategory(category.strCategory);
-
-      return {
-        ...category,
-        strCategoryThumb: meals[0]?.strMealThumb,
-      };
-    }),
-  );
-
   const meals = q
     ? await getMeals(q.trim())
     : category
@@ -81,7 +70,7 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
         <>
           <h2>Browse by Category</h2>
           <div className={styles.recipeGrid}>
-            {categoriesWithImages.map((category) => (
+            {categories.map((category) => (
               <CategoryCard key={category.idCategory} category={category} />
             ))}
           </div>
