@@ -22,6 +22,18 @@ type RecipesPageProps = {
 export default async function RecipesPage({ searchParams }: RecipesPageProps) {
   const { q, category } = await searchParams;
   const categories = !q && !category ? await getCategories() : [];
+
+  const categoriesWithImages = await Promise.all(
+    categories.map(async (category) => {
+      const meals = await getMealsByCategory(category.strCategory);
+
+      return {
+        ...category,
+        strCategoryThumb: meals[0]?.strMealThumb,
+      };
+    }),
+  );
+
   const meals = q
     ? await getMeals(q.trim())
     : category
@@ -50,13 +62,13 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
       </p>
 
       <Form action="/recipes" className={styles.searchForm}>
-        <label htmlFor="recipe-search">Search Recipes</label>
+        <label htmlFor="recipe-search">Search by recipe name</label>
         <div className={styles.searchControls}>
           <input
             type="search"
             id="recipe-search"
             name="q"
-            placeholder="e.g. pasta, chicken, soup"
+            placeholder="e.g. carbonara, lasagne, curry"
             defaultValue={q || ""}
             className={styles.searchInput}
           />
@@ -66,11 +78,14 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
         </div>
       </Form>
       {!q && !category ? (
-        <div className={styles.recipeGrid}>
-          {categories.map((category) => (
-            <CategoryCard key={category.idCategory} category={category} />
-          ))}
-        </div>
+        <>
+          <h2>Browse by Category</h2>
+          <div className={styles.recipeGrid}>
+            {categoriesWithImages.map((category) => (
+              <CategoryCard key={category.idCategory} category={category} />
+            ))}
+          </div>
+        </>
       ) : (
         <>
           {meals.length === 0 && (
