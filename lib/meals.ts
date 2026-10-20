@@ -1,9 +1,6 @@
 // henter oppskriftene fra TheMealDB
 
 import type { Meal, MealCategory, MealSummary } from "@/types/meal";
-import { error } from "console";
-import { RSCPathnameNormalizer } from "next/dist/server/normalizers/request/rsc";
-import { json } from "stream/consumers";
 
 // API-et returnerer ikke en liste direkte, men et objekt
 // Derfor lager vi en egen type for API-svaret
