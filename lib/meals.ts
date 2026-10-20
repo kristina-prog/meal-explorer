@@ -1,6 +1,9 @@
 // henter oppskriftene fra TheMealDB
 
-import type { Meal } from "@/types/meal";
+import type { Meal, MealCategory, MealSummary } from "@/types/meal";
+import { error } from "console";
+import { RSCPathnameNormalizer } from "next/dist/server/normalizers/request/rsc";
+import { json } from "stream/consumers";
 
 // API-et returnerer ikke en liste direkte, men et objekt
 // Derfor lager vi en egen type for API-svaret
@@ -48,4 +51,34 @@ export async function getMealById(id: string): Promise<Meal | null> {
   }
 
   return data.meals[0];
+}
+
+export async function getCategories(): Promise<MealCategory[]> {
+  const response = await fetch(
+    "https://www.themealdb.com/api/json/v1/1/categories.php",
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch categories");
+  }
+
+  const data = await response.json(); // gjør API-svaret om til data vi kan bruke
+
+  return data.categories ?? []; // returnerer kategoriene, eller en tom liste dersom API-et ikke sender noen kategorier
+}
+
+export async function getMealsByCategory(
+  category: string,
+): Promise<MealSummary[]> {
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/filter.php?c=${encodeURIComponent(category)}`,
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch recipes by category");
+  }
+
+  const data = await response.json();
+
+  return data.meals ?? [];
 }

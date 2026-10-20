@@ -17,3 +17,16 @@ export type Ingredient = {
   name: string;
   measure: string;
 };
+
+export type MealCategory = {
+  idCategory: string; // kategoriens ID
+  strCategory: string; // navnet, f eks Seafood
+  strCategoryThumb: string; // URL til kategoribildet
+  strCategoryDescription: string;
+};
+
+export type MealSummary = {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
+};
