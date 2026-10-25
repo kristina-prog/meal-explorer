@@ -2,6 +2,7 @@
   --background: #ffffff;
   --foreground: #252525;
   --primary: #633b57;
+  --primary-light: #eee3ed;
   --border: #e5e5e5;
 }
 
@@ -58,4 +59,16 @@ main {
 .button:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 3px;
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.backLink:hover {
+  text-decoration: underline;
 }

@@ -39,11 +39,33 @@
 
 .ingredientItem:last-child {
   border-bottom: none;
-  text-align: right;
 }
 
 .instructions {
   max-width: 600px;
   line-height: 1.8;
   white-space: pre-line;
+}
+
+.recipeInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.categoryTag,
+.originTag {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.categoryTag {
+  text-decoration: none;
+}
+
+.categoryTag:hover {
+  text-decoration: underline;
 }

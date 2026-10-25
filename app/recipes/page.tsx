@@ -6,6 +6,7 @@ import styles from "./page.module.css";
 import { getMeals, getCategories, getMealsByCategory } from "@/lib/meals";
 import Form from "next/form";
 import CategoryCard from "@/components/CategoryCard/CategoryCard";
+import Link from "next/link";
 
 type RecipesPageProps = {
   searchParams: Promise<{ q?: string; category?: string }>;
@@ -43,6 +44,11 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
 
   return (
     <section className={styles.recipesPage}>
+      {category && !q && (
+        <Link href="./recipes" className="backLink">
+          ← Back to categories
+        </Link>
+      )}
       <h1 className={styles.pageTitle}>
         {category && !q ? `${category} Recipes` : "Explore Recipes"}
       </h1>
