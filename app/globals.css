@@ -1,10 +1,9 @@
 :root {
-  --background: #ffffff;
+  --background: #faf8f9;
   --foreground: #252525;
   --primary: #633b57;
   --primary-light: #eee3ed;
   --border: #e5e5e5;
-  --background: #faf8f9;
 }
 
 * {
