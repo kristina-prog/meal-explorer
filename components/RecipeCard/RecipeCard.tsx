@@ -1,12 +1,12 @@
 // bestemmer hvordan én oppskrift skal vises
 
 import Image from "next/image";
-import type { Meal } from "@/types/meal";
+import type { Meal, MealSummary } from "@/types/meal";
 import styles from "./RecipeCard.module.css";
 import Link from "next/link"; // Link er Next.js sin komponent for navigasjon mellom sider
 
 type RecipeCardProps = {
-  meal: Meal;
+  meal: Meal | MealSummary;
 };
 
 export default function RecipeCard({ meal }: RecipeCardProps) {
@@ -22,7 +22,6 @@ export default function RecipeCard({ meal }: RecipeCardProps) {
         />
 
         <h2>{meal.strMeal}</h2>
-        <p>Category: {meal.strCategory}</p>
       </Link>
     </article>
   );

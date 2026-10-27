@@ -4,13 +4,19 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 2px 4px #0000001a;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2 ease;
+}
+
+.recipeCard:hover {
+  box-shadow: 0 6px 12px #00000026;
 }
 
 .recipeImage {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 
@@ -21,4 +27,19 @@
   padding: 1rem;
   box-sizing: border-box;
   height: 100%;
+}
+
+.categoryCard {
+  background-color: #e2cde0;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.categoryImage {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
 }

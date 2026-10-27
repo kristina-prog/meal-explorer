@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import type { Ingredient } from "@/types/meal";
 import styles from "./page.module.css";
+import Link from "next/link";
 
 type RecipeDetailsPageProps = {
   params: Promise<{ id: string }>;
@@ -41,6 +42,9 @@ export default async function RecipeDetailsPage({
 
   return (
     <section className={styles.recipeDetails}>
+      <Link href="/recipes" className="backLink">
+        ← Back to recipes
+      </Link>
       <h1 className={styles.recipeTitle}>{meal.strMeal}</h1>
       <Image
         src={meal.strMealThumb}
@@ -48,9 +52,19 @@ export default async function RecipeDetailsPage({
         width={300}
         height={200}
         className={styles.recipeImage}
+        loading="eager"
       />
-      <p>Category: {meal.strCategory}</p>
-      <p>Origin: {meal.strArea}</p>
+      <div className={styles.recipeInfo}>
+        <Link
+          href={`/recipes?category=${encodeURIComponent(meal.strCategory)}`}
+          className={styles.categoryTag}
+        >
+          {meal.strCategory}
+        </Link>
+        {meal.strArea && (
+          <span className={styles.originTag}>{meal.strArea}</span>
+        )}
+      </div>
       <h2 className={styles.sectionTitle}>Ingredients</h2>
       <ul className={styles.ingredientsList}>
         {ingredients.map((ingredient, index) => (
