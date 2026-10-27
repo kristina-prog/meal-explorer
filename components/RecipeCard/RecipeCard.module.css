@@ -29,6 +29,10 @@
   height: 100%;
 }
 
+.cardLink:focus-visible {
+  border-radius: 12px;
+}
+
 .categoryCard {
   background-color: #e2cde0;
   border: none;
