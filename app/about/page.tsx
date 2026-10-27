@@ -1,5 +1,9 @@
 import styles from "./page.module.css";
 
+/**
+ * Viser informasjon om Spoonful, oppskriftskilden og prosjektet.
+ * @returns Om-siden med informasjon om nettstedet.
+ */
 export default function AboutPage() {
   return (
     <section className={styles.aboutPage}>
@@ -9,9 +13,8 @@ export default function AboutPage() {
         <h2>What is Spoonful?</h2>
         <p>
           Spoonful is a recipe website for anyone looking for inspiration and
-          new meals to try. You can explore a wide variety of recipes from
-          around the world and search for recipes and discover new dishes to
-          try.
+          new meals to try. You can explore recipes from around the world,
+          browse different categories, and search for recipes by name.
         </p>
       </div>
       <div className={styles.infoCard}>

@@ -1,6 +1,10 @@
-import Link from "next/link"; // Her bruker vi Link fra Next.js i stedet for vanlige <a>-elementer til intern navigasjon
+import Link from "next/link";
 import styles from "./Header.module.css";
 
+/**
+ * Viser nettstedets header med logo og hovednavigasjon.
+ * @returns En header med lenker til forsiden, oppskrifter og om-siden.
+ */
 export default function Header() {
   return (
     <header className={styles.header}>

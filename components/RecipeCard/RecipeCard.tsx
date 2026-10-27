@@ -3,11 +3,17 @@
 import Image from "next/image";
 import type { Meal, MealSummary } from "@/types/meal";
 import styles from "./RecipeCard.module.css";
-import Link from "next/link"; // Link er Next.js sin komponent for navigasjon mellom sider
+import Link from "next/link";
 
 type RecipeCardProps = {
   meal: Meal | MealSummary;
 };
+
+/**
+ * Viser et oppskriftskort med bilde og navn som lenker til detaljsiden.
+ * @param meal - Oppskriften som skal vises (Meal eller MealSummary).
+ * @returns Et oppskriftskort med lenke til oppskriftens detaljside.
+ */
 
 export default function RecipeCard({ meal }: RecipeCardProps) {
   return (

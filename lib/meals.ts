@@ -9,7 +9,12 @@ type MealResponse = {
 };
 
 // encodeURIComponent(searchTerm) – håndterer mellomrom og spesialtegn i søket
-// Henter oppskrifter basert på søketermen
+
+/**
+ * Henter oppskrifter fra TheMealDB basert på et søkeord.
+ * @param searchTerm - Søkeordet som brukes til å finne oppskrifter.
+ * @returns En liste med oppskrifter, eller en tom liste ved ingen treff.
+ */
 export async function getMeals(searchTerm: string): Promise<Meal[]> {
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${encodeURIComponent(searchTerm)}`,
@@ -21,7 +26,6 @@ export async function getMeals(searchTerm: string): Promise<Meal[]> {
 
   const data: MealResponse = await response.json();
 
-  // Dersom API-et returnerer null, returnerer vi en tom liste
   if (!data.meals) {
     return [];
   }
@@ -29,9 +33,11 @@ export async function getMeals(searchTerm: string): Promise<Meal[]> {
   return data.meals;
 }
 
-// Henter en spesifikk oppskrift basert på ID
-// funksjonen returnerer enten en oppskrift eller null dersom ID-en ikke finnes
-// når vi søker etter én ID, returnerer TheMealDB et objekt med en meals-liste. Derfor henter vi det første elementet med [0]
+/**
+ * Henter en bestemt oppskrift fra TheMealDB.
+ * @param id - ID-en til oppskriften.
+ * @returns Oppskriften, eller null dersom ID-en ikke finnes.
+ */
 export async function getMealById(id: string): Promise<Meal | null> {
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${encodeURIComponent(id)}`,
@@ -50,6 +56,10 @@ export async function getMealById(id: string): Promise<Meal | null> {
   return data.meals[0];
 }
 
+/**
+ * Henter alle oppskriftskategoriene fra TheMealDB.
+ * @returns En liste med kategorier, eller en tom liste dersom ingen finnes.
+ */
 export async function getCategories(): Promise<MealCategory[]> {
   const response = await fetch(
     "https://www.themealdb.com/api/json/v1/1/categories.php",
@@ -59,11 +69,16 @@ export async function getCategories(): Promise<MealCategory[]> {
     throw new Error("Failed to fetch categories");
   }
 
-  const data = await response.json(); // gjør API-svaret om til data vi kan bruke
+  const data = await response.json();
 
-  return data.categories ?? []; // returnerer kategoriene, eller en tom liste dersom API-et ikke sender noen kategorier
+  return data.categories ?? []; //
 }
 
+/**
+ * Henter oppskrifter fra en bestemt kategori.
+ * @param category - Navnet på kategorien.
+ * @returns En liste med oppskrifter, eller en tom liste dersom ingen finnes.
+ */
 export async function getMealsByCategory(
   category: string,
 ): Promise<MealSummary[]> {

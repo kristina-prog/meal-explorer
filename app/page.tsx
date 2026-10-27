@@ -1,6 +1,10 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 
+/**
+ * Viser forsiden til Spoonful med en introduksjon og lenke til oppskriftsoversikten.
+ * @returns Forsiden med en hero-seksjon og en lenke til /recipes.
+ */
 export default function Home() {
   return (
     <section className={styles.hero}>
