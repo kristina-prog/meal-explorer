@@ -1,13 +1,23 @@
 # Refleksjon – Spoonful
 
+## Arbeidsprosess og valg av API
+
 Det viktigste for meg da jeg skulle velge API til denne oppgaven, var å finne et som passet til kravene. Jeg har tidligere opplevd å velge et API uten bilder, noe som er kjedelig å oppdage når man allerede har kommet et godt stykke ut i utviklingen. Denne gangen ville jeg derfor være sikker på at API-et hadde dataene jeg trengte.
 
-Jeg kom ganske sent i gang med oppgaven på grunn av omtrent tre uker med syke barn. Heldigvis var ikke denne oppgaven like omfattende som Video Poker. Jeg har kost meg med å jobbe med Next.js og designe Spoonful. Jeg tror faktisk dette er oppgaven jeg har trivdes best med så langt, fordi jeg har fått fokusere på det jeg er mest interessert i: brukervennlighet (UX) og universell utforming (UU). Jeg har også likt at oppgaven har hatt ganske frie tøyler.
+Jeg kom ganske sent i gang med oppgaven på grunn av omtrent tre uker med syke barn. Heldigvis var ikke denne oppgaven like omfattende som Video Poker. Jeg har kost meg med å jobbe med Next.js og designe Spoonful. Jeg tror faktisk dette er oppgaven jeg har trivdes best med så langt, fordi jeg har fått fokusere på det jeg er mest interessert i: brukervennlighet (UX) og universell utforming (UU). Jeg har også likt at vi har fått ganske frie tøyler i oppgaven.
+
+## Læring og kodestruktur
 
 Jeg har først og fremst fått øvd på ting jeg kunne litt om fra før. Jeg har fått bedre forståelse for hvordan rutingen fungerer i Next.js, der mapper og spesielle filer i `app`-mappen bestemmer rutene automatisk. Jeg har også lært at man bruker klammer rundt mappenavnet, for eksempel `[id]`, for å lage dynamiske ruter.
 
-Jeg er opptatt av å skrive ryddig kode og unngå unødvendig duplisering. Jeg liker å holde CSS-en enkel og oversiktlig, uten mye nesting. Det jeg fortsatt synes kan være utfordrende, er å vurdere hvilke CSS-regler som bør være globale, og hvilke som bør ligge i egne CSS Modules. Noen ganger oppdager jeg underveis at jeg har skrevet den samme stylingen flere steder, eller at noe jeg først laget for én side, også brukes andre steder. Da må jeg rydde opp og organisere CSS-en på nytt. Jeg har fått litt bedre kontroll på dette, men ser at det er noe jeg fortsatt må jobbe med. Jeg har også brukt npm run lint underveis for å fange opp feil før jeg committer.
+Jeg er opptatt av å skrive ryddig kode og unngå unødvendig duplisering. Jeg liker å holde CSS-en enkel og oversiktlig, uten mye nesting. Det jeg fortsatt synes kan være utfordrende, er å vurdere hvilke CSS-regler som bør være globale, og hvilke som bør ligge i egne CSS Modules. Noen ganger oppdager jeg underveis at jeg har skrevet den samme stylingen flere steder, eller at noe jeg først laget for én side, også brukes andre steder. Da må jeg rydde opp og organisere CSS-en på nytt. Jeg har fått litt bedre kontroll på dette, men ser at det er noe jeg fortsatt må jobbe med. Jeg har også brukt `npm run lint` underveis for å fange opp feil før jeg committer.
+
+## Utfordringer og forbedringsmuligheter
 
 Jeg brukte ikke så mye tid på fargevalg, så designet ble ganske enkelt. Jeg ble også skuffet da jeg oppdaget hvor dårlige kategoribildene fra TheMealDB så ut. Jeg prøvde først å hente et oppskriftsbilde fra hver kategori i stedet, men det førte til 14 ekstra API-kall. Jeg innså at det var en unødvendig løsning, og vurderte også å la brukerne utforske oppskrifter etter land i stedet. Til slutt valgte jeg å beholde kategoribildene. Jeg er fortsatt ikke helt fornøyd med hvordan «Browse by Category» ser ut, men innså at oppgaven var løst, og at jeg ikke trengte å bruke mer tid på akkurat dette.
+
+Jeg var også litt usikker på hvordan jeg skulle løse søkefunksjonen med tanke på brukervennlighet. Slik søket fungerer nå, søker det bare etter oppskrifter som har søkeordet i navnet. Søker man for eksempel etter «pasta», får man bare ett treff, selv om det finnes en egen kategori med mange pastaretter. Ideelt sett skulle jeg gjerne hatt et søk som også tok hensyn til kategoriene. Jeg valgte likevel å beholde søket slik det er, og heller gjøre det tydelig at man søker etter oppskriftsnavn.
+
+## Erfaringer fra semesteret
 
 Dette semesteret har jeg også blitt mer bevisst på hva jeg liker å jobbe med. Jeg synes det er gøy med Next.js fordi det er en så direkte sammenheng mellom det jeg koder og det som skjer på nettsiden. Med Payload og PostgreSQL opplever jeg at det blir mye koding og lite synlige resultater, og det synes jeg ikke er like motiverende. Jeg trives best med å jobbe med brukergrensesnitt, UX og universell utforming.
