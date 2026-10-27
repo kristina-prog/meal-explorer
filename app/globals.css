@@ -4,6 +4,7 @@
   --primary: #633b57;
   --primary-light: #eee3ed;
   --border: #e5e5e5;
+  --background: #faf8f9;
 }
 
 * {
@@ -63,7 +64,7 @@ main {
 
 .backLink {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: var(--primary);
   text-decoration: none;
   font-weight: 600;
