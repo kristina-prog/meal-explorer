@@ -1,6 +1,3 @@
-// filen som styrer oppskriftsoversikten på /recipes
-// henter oppskriftene og bruker .map() til å vise ett RecipeCard for hver oppskrift
-
 import RecipeCard from "@/components/RecipeCard/RecipeCard";
 import styles from "./page.module.css";
 import { getMeals, getCategories, getMealsByCategory } from "@/lib/meals";
@@ -12,13 +9,11 @@ type RecipesPageProps = {
   searchParams: Promise<{ q?: string; category?: string }>;
 };
 
-// searchParams betyr at Next.js gir oss tilgang til søkeparameterne i URL-en
-// Vi bruker await for å hente verdien i Next.js 16, fordi searchParams er en Promise
-
-/*
-  Hvis q finnes, bruker vi getMeals() for søk.
-  Hvis category finnes, bruker vi getMealsByCategory().
-  Hvis ingen av dem finnes, blir meals en tom liste, fordi vi viser kategoriene i stedet. 
+/**
+ * Viser oppskriftsoversikten på /recipes.
+ * Viser kategorier, oppskrifter i en valgt kategori eller søkeresultater basert på oppskriftsnavn.
+ * @param searchParams - URL-parametere for søk (q) og kategori (category).
+ * @returns En side med kategorikort eller oppskriftskort.
  */
 export default async function RecipesPage({ searchParams }: RecipesPageProps) {
   const { q, category } = await searchParams;
@@ -29,18 +24,6 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
     : category
       ? await getMealsByCategory(category)
       : [];
-
-  // Her bruker vi .map() til å lage ett oppskriftskort for hver oppskrift API-et returnerer
-  // key={meal.idMeal} gir React en unik identifikator for hvert kort
-
-  /*
-  
-  !q && !category betyr at verken et søkeord eller en kategori er valgt
-  categories.map() lager ett CategoryCard for hver kategori
-  Hvis brukeren har søkt, viser vi RecipeCard som før
-  Vi gjenbruker recipeGrid, slik at kortene allerede får den responsive grid-layouten 
-  
-  */
 
   return (
     <section className={styles.recipesPage}>

@@ -6,11 +6,7 @@
 }
 
 .heroTitle {
-  font-size: clamp(
-    2rem,
-    5vw,
-    3rem
-  ); /* Responsive font size between 2rem and 3rem */
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: bold;
   margin-bottom: 1.5rem;
 }

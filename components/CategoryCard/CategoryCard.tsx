@@ -7,6 +7,11 @@ type CategoryCardProps = {
   category: MealCategory;
 };
 
+/**
+ * Viser et kategorikort med bilde og kategorinavn.
+ * @param category - Kategorien som skal vises.
+ * @returns Et kategorikort med lenke til oppskriftene i kategorien.
+ */
 export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <article className={`${styles.recipeCard} ${styles.categoryCard}`}>

@@ -1,5 +1,3 @@
-// I Next.js betyr [] at denne delen av URL-en er dynamisk. Dermed kan samme side brukes til både /recipes/52772 og /recipes/52804
-
 import { getMealById } from "@/lib/meals";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -11,8 +9,13 @@ type RecipeDetailsPageProps = {
   params: Promise<{ id: string }>;
 };
 
-// Hvis du besøker /recipes/52772, får variabelen id verdien "52772"
-// I Next.js 16 er params en Promise, og derfor bruker vi await
+/**
+ * Viser detaljsiden for en oppskrift.
+ * Henter oppskriften basert på ID-en i URL-en og viser
+ * ingredienser, fremgangsmåte og informasjon om oppskriften.
+ * @param params - Inneholder oppskriftens ID fra den dynamiske ruten.
+ * @returns Detaljsiden for oppskriften, eller en 404-side hvis ID-en ikke finnes.
+ */
 export default async function RecipeDetailsPage({
   params,
 }: RecipeDetailsPageProps) {
@@ -23,16 +26,14 @@ export default async function RecipeDetailsPage({
     notFound();
   }
 
-  // Vi oppretter en tom liste som skal fylles med ingredienser og mål
   const ingredients: Ingredient[] = [];
 
-  // Løkken går gjennom tallene 1 til 20, fordi TheMealDB har opptil 20 ingrediensfelter
+  // TheMealDB har opptil 20 ingrediensfelter som vi går gjennom
   for (let i = 1; i <= 20; i++) {
     const ingredient = meal[`strIngredient${i}`];
     const measure = meal[`strMeasure${i}`];
 
     if (ingredient?.trim()) {
-      // filtrerer bort tomme ingrediensfelter
       ingredients.push({
         name: ingredient.trim(),
         measure: measure?.trim() || "",
