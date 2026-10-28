@@ -1,9 +1,19 @@
 :root {
-  --background: #faf8f9;
-  --foreground: #252525;
-  --primary: #633b57;
-  --primary-light: #eee3ed;
-  --border: #e5e5e5;
+  --background: #fff8f0;
+  --foreground: #33251f;
+  --primary: #e35207;
+  --primary-hover: #b44005;
+  --primary-light: #fff0e5;
+  --border: #eaddd2;
+
+  --peach: #fce8dc;
+  --sage: #e5eddf;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-outfit), Arial, sans-serif;
 }
 
 * {
@@ -45,15 +55,14 @@ main {
   background-color: var(--primary);
   color: white;
   border: none;
-  border-radius: 4px;
   font: inherit;
   text-align: center;
-  text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .button:hover {
-  background-color: #523047;
+  background-color: var(--primary-hover);
 }
 
 .button:focus-visible {

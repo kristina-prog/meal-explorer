@@ -26,6 +26,12 @@
   gap: 2rem;
 }
 
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
 .searchForm {
   display: flex;
   flex-direction: column;
@@ -43,15 +49,17 @@
 .searchInput {
   flex: 1;
   min-width: 0;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 0;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: none;
+  border-bottom: 2px solid var(--primary);
+  border-radius: 0;
+  background-color: transparent;
 }
 
 .searchInput:focus-visible {
   outline: 2px solid var(--primary);
-  outline-offset: 2px;
+  outline-offset: 4px;
 }
 
 @media (max-width: 600px) {
@@ -62,5 +70,17 @@
   .searchInput,
   .searchButton {
     width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 400px) {
+  .categoryGrid {
+    grid-template-columns: 1fr;
   }
 }

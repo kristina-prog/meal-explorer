@@ -5,8 +5,8 @@
 }
 
 .aboutPage h1 {
-  margin-bottom: 2rem;
-  color: var(--primary);
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
 }
 
 .aboutPage h2 {
@@ -19,15 +19,5 @@
 }
 
 .infoCard {
-  background-color: #ffffff;
-  border-left: 4px solid var(--primary);
-  border-radius: 8px;
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-@media (max-width: 600px) {
-  .infoCard h2 {
-    font-size: 1.25rem;
-  }
+  margin-bottom: 2.5rem;
 }

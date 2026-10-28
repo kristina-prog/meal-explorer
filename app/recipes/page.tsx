@@ -58,7 +58,7 @@ export default async function RecipesPage({ searchParams }: RecipesPageProps) {
       {!q && !category ? (
         <>
           <h2>Browse by Category</h2>
-          <div className={styles.recipeGrid}>
+          <div className={styles.categoryGrid}>
             {categories.map((category) => (
               <CategoryCard key={category.idCategory} category={category} />
             ))}
