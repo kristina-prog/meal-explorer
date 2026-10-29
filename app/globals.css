@@ -1,13 +1,10 @@
 :root {
   --background: #fff8f0;
   --foreground: #33251f;
-  --primary: #e35207;
-  --primary-hover: #b44005;
+  --primary: #c74400;
+  --primary-hover: #a63800;
   --primary-light: #fff0e5;
   --border: #eaddd2;
-
-  --peach: #fce8dc;
-  --sage: #e5eddf;
 }
 
 h1,
