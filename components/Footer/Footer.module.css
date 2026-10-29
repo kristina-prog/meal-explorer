@@ -3,13 +3,20 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1.5rem;
-  border-top: 1px solid var(--border);
+  padding: 2rem 1.5rem;
+  background-color: var(--foreground);
+  color: var(--background);
   font-size: 0.875rem;
 }
 
 .footer p {
   margin: 0;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 600px) {
