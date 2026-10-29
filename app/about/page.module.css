@@ -21,3 +21,8 @@
 .infoCard {
   margin-bottom: 2.5rem;
 }
+
+.infoCard a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

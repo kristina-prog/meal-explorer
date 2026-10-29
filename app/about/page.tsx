@@ -20,7 +20,17 @@ export default function AboutPage() {
       <div className={styles.infoCard}>
         <h2>Where do the recipes come from?</h2>
 
-        <p>Recipes are provided by TheMealDB, an external recipe API.</p>
+        <p>
+          Recipes are provided by{" "}
+          <a
+            href="https://www.themealdb.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TheMealDB
+          </a>
+          , an external recipe API.
+        </p>
       </div>
       <div className={styles.infoCard}>
         <h2>Who made Spoonful?</h2>
