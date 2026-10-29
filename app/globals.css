@@ -1,9 +1,16 @@
 :root {
-  --background: #faf8f9;
-  --foreground: #252525;
-  --primary: #633b57;
-  --primary-light: #eee3ed;
-  --border: #e5e5e5;
+  --background: #fff8f0;
+  --foreground: #33251f;
+  --primary: #c74400;
+  --primary-hover: #a63800;
+  --primary-light: #fff0e5;
+  --border: #eaddd2;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-outfit), Arial, sans-serif;
 }
 
 * {
@@ -45,15 +52,14 @@ main {
   background-color: var(--primary);
   color: white;
   border: none;
-  border-radius: 4px;
   font: inherit;
   text-align: center;
-  text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 .button:hover {
-  background-color: #523047;
+  background-color: var(--primary-hover);
 }
 
 .button:focus-visible {
@@ -71,4 +77,9 @@ main {
 
 .backLink:hover {
   text-decoration: underline;
+}
+
+/*sørger for at bare forsiden får Grid på <main>, slik at hero-seksjonen kan fylle høyden*/
+body:has(> main > section[class*="hero"]) > main {
+  display: grid;
 }

@@ -14,18 +14,19 @@ type RecipeCardProps = {
  * @param meal - Oppskriften som skal vises (Meal eller MealSummary).
  * @returns Et oppskriftskort med lenke til oppskriftens detaljside.
  */
-
 export default function RecipeCard({ meal }: RecipeCardProps) {
   return (
     <article className={styles.recipeCard}>
       <Link href={`/recipes/${meal.idMeal}`} className={styles.cardLink}>
-        <Image
-          src={meal.strMealThumb}
-          alt=""
-          width={300}
-          height={200}
-          className={styles.recipeImage}
-        />
+        <div className={styles.imageWrapper}>
+          <Image
+            src={meal.strMealThumb}
+            alt=""
+            width={300}
+            height={200}
+            className={styles.recipeImage}
+          />
+        </div>
 
         <h2>{meal.strMeal}</h2>
       </Link>

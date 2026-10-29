@@ -46,34 +46,47 @@ export default async function RecipeDetailsPage({
       <Link href="/recipes" className="backLink">
         ← Back to recipes
       </Link>
+
       <h1 className={styles.recipeTitle}>{meal.strMeal}</h1>
-      <Image
-        src={meal.strMealThumb}
-        alt={meal.strMeal}
-        width={300}
-        height={200}
-        className={styles.recipeImage}
-        loading="eager"
-      />
-      <div className={styles.recipeInfo}>
-        <Link
-          href={`/recipes?category=${encodeURIComponent(meal.strCategory)}`}
-          className={styles.categoryTag}
-        >
-          {meal.strCategory}
-        </Link>
-        {meal.strArea && (
-          <span className={styles.originTag}>{meal.strArea}</span>
-        )}
+
+      <div className={styles.recipeLayout}>
+        <div>
+          <Image
+            src={meal.strMealThumb}
+            alt={meal.strMeal}
+            width={600}
+            height={600}
+            className={styles.recipeImage}
+            loading="eager"
+          />
+
+          <div className={styles.recipeInfo}>
+            <Link
+              href={`/recipes?category=${encodeURIComponent(meal.strCategory)}`}
+              className={styles.categoryTag}
+            >
+              {meal.strCategory} →
+            </Link>
+
+            {meal.strArea && (
+              <span className={styles.originTag}>{meal.strArea}</span>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <h2 className={styles.sectionTitle}>Ingredients</h2>
+
+          <ul className={styles.ingredientsList}>
+            {ingredients.map((ingredient, index) => (
+              <li key={index} className={styles.ingredientItem}>
+                {ingredient.name} - {ingredient.measure}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <h2 className={styles.sectionTitle}>Ingredients</h2>
-      <ul className={styles.ingredientsList}>
-        {ingredients.map((ingredient, index) => (
-          <li key={index} className={styles.ingredientItem}>
-            {ingredient.name} - {ingredient.measure}
-          </li>
-        ))}
-      </ul>
+
       <h2 className={styles.sectionTitle}>Instructions</h2>
       <p className={styles.instructions}>{meal.strInstructions}</p>
     </section>

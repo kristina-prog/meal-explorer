@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -8,14 +9,25 @@ import Link from "next/link";
 export default function Home() {
   return (
     <section className={styles.hero}>
-      <h1 className={styles.heroTitle}>Discover your next favorite meal</h1>
-      <p className={styles.heroDescription}>
-        Explore delicious recipes from around the world and find inspiration for
-        your next meal.
-      </p>
-      <Link href="/recipes" className={`button ${styles.heroButton}`}>
-        Browse Recipes
-      </Link>
+      <div className={styles.heroContent}>
+        <h1 className={styles.heroTitle}>Discover your next favorite meal</h1>
+        <p className={styles.heroDescription}>
+          Explore delicious recipes from around the world and find inspiration
+          for your next meal.
+        </p>
+        <Link href="/recipes" className={`button ${styles.heroButton}`}>
+          Browse Recipes
+        </Link>
+      </div>
+      <div className={styles.heroImage}>
+        <Image
+          src="/images/hero2_uten_bakgrunn.png"
+          alt="A colorful meal served in a bowl"
+          width={600}
+          height={600}
+          priority
+        />
+      </div>
     </section>
   );
 }

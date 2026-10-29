@@ -1,12 +1,27 @@
 .footer {
-  padding: 1.5rem;
-  text-align: center;
-  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1.5rem;
+  background-color: var(--foreground);
+  color: var(--background);
   font-size: 0.875rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 600px) {
   .footer {
-    padding: 1.5rem 1rem;
+    flex-direction: column;
+    text-align: center;
   }
 }
