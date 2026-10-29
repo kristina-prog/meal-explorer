@@ -72,10 +72,21 @@
 
 .categoryTag {
   text-decoration: none;
+  font-weight: 600;
 }
 
 .categoryTag:hover {
-  text-decoration: underline;
+  background-color: var(--primary);
+  color: white;
+}
+
+.categoryTag:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+.originTag {
+  color: var(--foreground);
 }
 
 @media (max-width: 700px) {

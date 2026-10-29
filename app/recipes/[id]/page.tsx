@@ -65,7 +65,7 @@ export default async function RecipeDetailsPage({
               href={`/recipes?category=${encodeURIComponent(meal.strCategory)}`}
               className={styles.categoryTag}
             >
-              {meal.strCategory}
+              {meal.strCategory} →
             </Link>
 
             {meal.strArea && (
