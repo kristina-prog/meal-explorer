@@ -81,3 +81,8 @@ main {
 .backLink:hover {
   text-decoration: underline;
 }
+
+/*sørger for at bare forsiden får Grid på <main>, slik at hero-seksjonen kan fylle høyden*/
+body:has(> main > section[class*="hero"]) > main {
+  display: grid;
+}
