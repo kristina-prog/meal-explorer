@@ -1,14 +1,8 @@
-// henter oppskriftene fra TheMealDB
-
 import type { Meal, MealCategory, MealSummary } from "@/types/meal";
 
-// API-et returnerer ikke en liste direkte, men et objekt
-// Derfor lager vi en egen type for API-svaret
 type MealResponse = {
-  meals: Meal[] | null; // dersom søket ikke gir noen treff
+  meals: Meal[] | null;
 };
-
-// encodeURIComponent(searchTerm) – håndterer mellomrom og spesialtegn i søket
 
 /**
  * Henter oppskrifter fra TheMealDB basert på et søkeord.

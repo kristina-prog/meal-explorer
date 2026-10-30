@@ -1,4 +1,3 @@
-//Meal beskriver hvordan dataene kommer fra API-et
 export type Meal = {
   idMeal: string;
   strMeal: string;
@@ -12,16 +11,15 @@ export type Meal = {
   [key: `strMeasure${number}`]: string | null;
 };
 
-// beskriver hvordan vi ønsker å bruke dataene i Spoonful
 export type Ingredient = {
   name: string;
   measure: string;
 };
 
 export type MealCategory = {
-  idCategory: string; // kategoriens ID
-  strCategory: string; // navnet, f eks Seafood
-  strCategoryThumb: string; // URL til kategoribildet
+  idCategory: string;
+  strCategory: string;
+  strCategoryThumb: string;
   strCategoryDescription: string;
 };
 
